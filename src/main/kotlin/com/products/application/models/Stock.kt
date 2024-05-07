@@ -6,16 +6,16 @@ class Stock(var products: ArrayList<Product>) {
         products.add(Product(id, name, value, quantity))
     }
 
-    fun modifyProduct(id: String, name: String, value: Float, quantity: Int) {
-        val existingProduct = products.find { it.id == id }
-        if (existingProduct != null) {
-            existingProduct.name = name
-            existingProduct.value = value
-            existingProduct.quantity = quantity
-        }
-    }
-
     fun listProducts(): List<Product> {
         return this.products
+    }
+
+    fun removeProduct(id: String) {
+        val productBeRemoved = products.find { it.id === id }
+
+        if (productBeRemoved == null)
+            throw Exception("Product with id $id not found")
+
+        products.remove(productBeRemoved)
     }
 }

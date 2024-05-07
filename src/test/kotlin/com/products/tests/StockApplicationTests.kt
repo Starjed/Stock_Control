@@ -1,10 +1,10 @@
-package com.products.gabriel
+package com.products.tests
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
 
 @SpringBootTest
-class EstoqueApplicationTests {
+class StockApplicationTests {
 
 	@Test
 	fun contextLoads() {
